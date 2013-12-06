@@ -1,0 +1,9 @@
+<%= form_tag translate_path, :method => 'get', :id => "tranlate-form", :class => "translate-form" do %>
+  <div class="input-wrap group">
+    <input id="translate_number" class="form-control translate-field" type="text" class="search-input" name="translate_number">
+    <span style="color:#CCC;font-size:1.5em;">enter an integer</span>
+  </div>  
+  <input type="image" id="search-submit" class="submit" onclick="getLocation()" alt="Search" 
+  src="/assets/loop.svg" >
+  <br>
+<% end %>

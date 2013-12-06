@@ -1,0 +1,23 @@
+<h1>Enter a Number</h1>
+
+<p>
+	Just a little number to enlgish translator. <strong>Backend using a non-blocking REST server on Mongo</strong> 
+	If we can't find your number, we translate it and save it to our mongo db. If we do find your number we return the saved translation. We can also cater for different languages.
+</p>
+
+<div id="translate" class="translate-wrap">	
+	<div>
+		<%= render "form" %>
+	</div>
+</div>
+
+<div id="result" class="result-wrap">	
+	<% if @number.nil? || @number.empty? %>
+		<p> Your translated number will appear here. </p>
+	<% else %>
+		<p> I have found some possible translations for you: </p>
+		<% @number.presentations.each do |presentation| %>
+			<h4> <%= presentation %> </h4>
+		<% end %>
+	<% end %>
+</div>
